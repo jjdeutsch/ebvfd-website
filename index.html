@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elgin-Beaverdam Volunteer Fire Hose Co.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  :root {
+    --primary: #b22222;
+    --dark: #222;
+    --light: #f7f7f7;
+    --accent: #ffcc33;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #333;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--primary), #7a1111);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  nav {
+    background: var(--dark);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 12px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  nav button:hover {
+    background: #444;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  section {
+    display: none;
+    padding: 20px 0;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  h2 {
+    color: var(--primary);
+    border-left: 5px solid var(--accent);
+    padding-left: 10px;
+  }
+
+  .card {
+    background: var(--light);
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+  }
+
+  footer {
+    background: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  /* Member Grid */
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .member-card {
+    background: var(--light);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .member-card img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+  }
+
+  /* Admin Login */
+  .admin-box {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+    background: var(--light);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .admin-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 15px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+
+  .admin-box button {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .admin-box button:hover {
+    background: #8b1a1a;
+  }
+</style>
+
+
+</head>
+<body>
+
+<header>
+  <h1>Elgin-Beaverdam Volunteer Fire Hose Co.</h1>
+  <p>Proudly Serving</p>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Home</button>
+  <button onclick="showSection('about')">About Us</button>
+<button onclick="showSection('event')">Events</button>
+
+ <button onclick="showSection('membership')">Membership</button>
+  <button onclick="showSection('members')">Our Members</button>
+  <button onclick="showSection('training')">Training</button>
+  <button onclick="showSection('admin')">Admin Login</button>
+  <button onclick="showSection('lineofficers')">Line Officers</button>
+<button id="editButton" onclick="toggleEdit()" 
+style="display:none; margin:10px auto; padding:10px; background:#b22222; color:white; border:none; border-radius:4px; cursor:pointer;">
+  Enter Edit Mode
+</button>
+
+
+
+</nav>
+
+<div class="container">
+
+  <!-- HOME -->
+  <section id="home" class="active">
+    <h2>Welcome</h2>
+    <p>
+      Elgin-Beaverdam Volunteer Fire Hose Co. provides fire protection, rescue services, and community support
+      to the residents of Elgin, Beaverdam, and surrounding areas. Our members are neighbors helping neighbors,
+      trained and ready 24/7.
+    </p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      We are a rural volunteer fire company committed to protecting life, property, and community through
+      training, teamwork, and service.
+    </p>
+  </section>
+  <!-- Events -->
+  <section id="event">
+    <h2>Events,</h2>
+    <div class="card">
+      <p>Events Tentive for 2026</p>
+      <p>Trash & Treasure Auction *** Date not set</p>
+      <p>Turkey Shoot ***Date not set</p>
+    </div>
+  </section>
+  <!-- MEMBERS -->
+  <section id="members">
+    <h2>Meet Our Members</h2>
+    <p>Dedicated volunteers serving the Elgin & Beaverdam communities.</p>
+
+    <div class="member-grid">
+
+      <div class="member-card">
+        <img src="https://image2url.com/r2/default/images/1770086556957-e769333d-6d9b-4796-becd-4c50b76f7f7d.jpg" alt="Josh Deutsch">
+        <h3>Josh Deutsch</h3>
+        <p>Interior Firefighter</p>
+      </div>
+
+      <div class="member-card">
+        <img src="IMAGE_URL_HERE" alt="Jack Fink">
+        <h3>Jack Fink</h3>
+        <p>Firefighter</p>
+      </div>
+
+      <div class="member-card">
+        <img src="IMAGE_URL_HERE" alt="Hunter Fink">
+        <h3>Hunter Fink</h3>
+        <p>Firefighter</p>
+      </div>
+
+      <div class="member-card">
+        <img src="IMAGE_URL_HERE" alt="Mike Campbell">
+        <h3>Mike Campbell</h3>
+        <p>Support Member</p>
+      </div>
+
+      <div class="member-card">
+        <img src="IMAGE_URL_HERE" alt="Kelly L">
+        <h3>Kelly L.</h3>
+        <p>Support Member</p>
+      </div>
+
+      <div class="member-card">
+        <img src="IMAGE_URL_HERE" alt="Noah Thomas">
+        <h3>Noah Thomas</h3>
+        <p>Driver / Support</p>
+      </div>
+
+    </div>
+  </section>
+<section id="lineofficers">
+  <h2>2026 Line Officers</h2>
+
+  <div class="card">
+    <h3>Chief 740</h3>
+    <p>Richard Warner</p>
+  </div>
+
+  <div class="card">
+    <h3>Assistant Chief 751</h3>
+    <p>Mike Cambell</p>
+  </div>
+
+  <div class="card">
+    <h3>74L1</h3>
+    <p>Monica Warner</p>
+  </div>
+
+  <div class="card">
+    <h3>74L2</h3>
+    <p>Jack Fink</p>
+  </div>
+</section>
+
+<!--Membership-->
+<section id="membership">
+<h2>Membership</h2>
+<p> If you are looking to join, stop by any Thursday at 7pm. Must live in Wayne or Concord Township or Elgin Borough.</p>
+</section>
+  <!-- TRAINING -->
+  <section id="training">
+    <h2>Training</h2>
+    <p>Training information coming soon.</p>
+  </section>
+
+  <!-- ADMIN LOGIN -->
+  <section id="admin">
+    <h2>Admin Login</h2>
+    <p style="text-align:center;">Authorized personnel only</p>
+
+    <div class="admin-box">
+      <h3>Administrator Access</h3>
+
+      <input id="adminUser" type="text" placeholder="Username">
+      <input id="adminPass" type="password" placeholder="Password">
+
+      <button onclick="adminLogin()">Login</button>
+
+      <p id="adminError" style="text-align:center; font-size:0.85rem; margin-top:10px; color:red; display:none;">
+        Incorrect username or password
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; <span id="year"></span> Elgin-BeaverDam Volunteer Fire Hose Co. Website By Josh Deutsch
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  let editMode = false;
+
+function adminLogin() {
+  const user = document.getElementById("adminUser").value;
+  const pass = document.getElementById("adminPass").value;
+
+  if (user === "admin" && pass === "admin") {
+    alert("Login successful");
+    document.getElementById("editButton").style.display = "block";
+  } else {
+    document.getElementById("adminError").style.display = "block";
+  }
+}
+
+function toggleEdit() {
+  editMode = !editMode;
+
+  document.querySelectorAll("[data-edit]").forEach(el => {
+    el.contentEditable = editMode;
+    el.style.border = editMode ? "1px dashed red" : "none";
+    el.style.padding = editMode ? "4px" : "0";
+  });
+
+  document.getElementById("editButton").innerText =
+    editMode ? "Exit Edit Mode" : "Enter Edit Mode";
+}
+
+</script>
+
+</body>
+</html>
+
