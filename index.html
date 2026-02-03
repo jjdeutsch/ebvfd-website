@@ -333,9 +333,16 @@ function toggleEdit() {
   document.getElementById("editButton").innerText =
     editMode ? "Exit Edit Mode" : "Enter Edit Mode";
 }
+function showSection(id) {
+  document.querySelectorAll("section").forEach(sec => {
+    sec.classList.remove("active");
+  });
+  document.getElementById(id).classList.add("active");
+}
 
 </script>
 
 </body>
 </html>
+
 
